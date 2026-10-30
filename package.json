@@ -1,0 +1,31 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "app": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "jest",
+    "test:ci": "jest --json --outputFile=.constat/check-report/raw.json"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "globalSetup": "./jest.global-setup.cjs",
+    "testMatch": [
+      "<rootDir>/src/**/*.test.ts"
+    ]
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}
